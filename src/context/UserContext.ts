@@ -4,13 +4,7 @@ type UserContextType = {
   name: string;
   balance: number;
   walletAddress: string;
-  kycLink: string;
-  setUserData: (
-    name: string,
-    balance: number,
-    walletAddress: string,
-    kycLink: string
-  ) => void;
+  setUserData: (name: string, balance: number, walletAddress: string) => void;
 };
 
 export const UserContext = createContext<UserContextType | undefined>(
