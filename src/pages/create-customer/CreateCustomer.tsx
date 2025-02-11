@@ -15,7 +15,6 @@ const CreateCustomer = () => {
     setLoading(true);
     setError(null);
     setSuccess(false);
-    console.log("apikey", MURAL_KEY);
 
     try {
       const response = await axios.post(
