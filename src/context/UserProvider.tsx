@@ -6,23 +6,22 @@ interface UserProviderProps {
 }
 
 export const UserProvider = ({ children }: UserProviderProps) => {
+  const [userId, setUserId] = useState("");
   const [user, setUser] = useState({
     name: "",
     balance: 0,
     walletAddress: "",
-    kycLink: "",
   });
 
   const setUserData = (
     name: string,
     balance: number,
-    walletAddress: string,
-    kycLink: string
+    walletAddress: string
   ) => {
-    setUser({ name, balance, walletAddress, kycLink });
+    setUser({ name, balance, walletAddress });
   };
   return (
-    <UserContext.Provider value={{ ...user, setUserData }}>
+    <UserContext.Provider value={{ ...user, setUserData, userId, setUserId }}>
       {children}
     </UserContext.Provider>
   );
